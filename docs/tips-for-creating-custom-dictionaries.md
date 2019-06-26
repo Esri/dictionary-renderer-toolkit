@@ -1,0 +1,9 @@
+# Tips for Creating Custom Dictionaries
+
+* The dictionary configuration and script can be edited in any text editor. To extract, open the .stylx in a SQLite database browser. In the `meta` table, double click in the value field for the `dictionary_configuration` or `dictionary_script`, select all and copy. Paste into a text editor, such as Notepad++. Once edits have been made you can copy back into the style. If saving as stand-alone file, save as a JSON file.
+
+* When editing the arcade script, you can check the syntax and ensure the expected keys are returned using https://developers.arcgis.com/arcade/playground/. In the Expression window add variables for the properties in the configuration. Below the variables copy the modified script and click test. If there are no errors the results will show a string of the values returned. Variables for the dictionaries included in ArcGIS Pro are available [here](../variable_declarations)
+
+* Because dictionary styles can be very large, it can be easier to create/edit symbols in a separate, smaller style and then merge them into the dictionary style once editing is complete. The important thing is to ensure the symbols have the correct key once they are merged into the dictionary. The [Merge Style add-in](../Add-Ins/Merge_Styles) with the Replace Keys option checked can be used to merge the symbols into the dictionary style while preserving the keys.
+
+* When customizing an existing dictionary, such as the military symbology dictionaries, the easiest starting point for creating a new symbol is to copy an existing symbol and modify the properties that are different. This preserves some of common properties, for example ensuring all the point symbols are the same size.

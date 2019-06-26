@@ -1,0 +1,27 @@
+var $sidc = '10121502512014000000';
+
+var $context = '0';
+var $identity = '3';
+var $symbolset = '10';
+var $status = '1';
+var $operationalcondition = '';
+var $symbolentity = '130100';
+var $modifier1 = '10';
+var $modifier2 = '10';
+var $specialentitysubtype = '';
+var $echelon = '3';
+var $mobility = '';
+var $array = '';
+var $indicator = '2';
+var $civilian = '1';
+var $direction = '45';
+
+var $colors = 'LIGHT';
+var $frame = 'ON';
+var $fill = 'ON';
+var $icon = 'ON';
+var $modifiers = 'ON';
+var $amplifiers = 'ON';
+var $text = 'ON';
+var $condition = 'ALTERNATE';
+var $sea_mine = 'MEDAL';
