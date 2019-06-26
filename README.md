@@ -7,6 +7,33 @@ Extend ArcGIS Pro and the ArcGIS Runtime SDKs by creating custom dictionary rend
 * [Adding New Symbol Set to MIL-STD-2525D](/docs/adding-a-new-symbol-set-to-MIL-STD-2525D.md)
 * [Adding Configuration for Country Indicator for MIL-STD-2525C](/docs/adding-a-configuration-for-country-indicator-for-MIL-STD-2525C.md)
 
+## Requirements
+
+Dictionaries generated using this toolkit can be used in ArcGIS Pro 2.4 or higher and ArcGIS Runtime SDKs 100.6 or higher.
+
+The requirements for the machine on which you modify ArcGIS Pro add-ins are listed here. 
+
+#### ArcGIS Pro
+
+* ArcGIS Pro 2.4 
+
+#### Supported platforms
+
+* Windows 10 (Home, Pro, Enterprise) (64 bit)
+* Windows 8.1 (Pro, and Enterprise) (64 bit) 
+* Windows 7 SP1 (Ultimate, Professional and Enterprise) (64 bit) 
+
+#### Supported .NET framework
+
+* Microsoft .NET Framework 4.6.1 Developer Pack
+
+#### Supported IDEs
+
+* Visual Studio 2017 (Professional, Enterprise, and Community Editions)
+* Visual Studio 2019 (Professional, Enterprise, and Community Editions)
+
+Note: [ArcGIS Pro system requirements](https://pro.arcgis.com/en/pro-app/get-started/arcgis-pro-system-requirements.htm) 
+
 ## Contributing
 
 Esri welcomes contributions from anyone and everyone. For more information, see our [guidelines for contributing](https://github.com/esri/contributing).
@@ -23,4 +50,4 @@ http://www.apache.org/licenses/LICENSE-2.0.
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-A copy of the license is available in the repository's [LICENSE.txt](LICENSE.txt) file.
+A copy of the license is available in the repository's [license.txt](https://github.com/Esri/arcgis-pro-metadata-toolkit/blob/master/license.txt) file.

@@ -96,7 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Esri.ArcGISPro.Extensions">
-      <Version>2.3.0.15775</Version>
+      <Version>2.4.0.19948</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
