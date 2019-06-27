@@ -1,11 +1,11 @@
-# Dictionary Renderer Toolkit
+# Dictionary renderer toolkit
 Extend ArcGIS Pro and the ArcGIS Runtime SDKs by creating custom dictionary renderers. Dictionary renderers allow complex symbology specifications, such as those using in military symbology, to be configured and drawn in maps. This toolkit provides resources to support modifying and creating symbol dictionaries for use with the dictionary renderer to suit your symbolization requirements.
 
-* [Understanding the Dictionary](/docs/understanding-the-dictionary.md)
-* [Tips for Creating Custom Dictionaries](/docs/tips-for-creating-custom-dictionaries.md)
-* [Adding New Identity to MIL-STD-2525C](/docs/adding-a-new-identity-to-MIL-2525C.md)
-* [Adding New Symbol Set to MIL-STD-2525D](/docs/adding-a-new-symbol-set-to-MIL-STD-2525D.md)
-* [Adding Configuration for Country Indicator for MIL-STD-2525C](/docs/adding-a-configuration-for-country-indicator-for-MIL-STD-2525C.md)
+* [Understanding the dictionary](/docs/understanding-the-dictionary.md)
+* [Tips for creating custom dictionaries](/docs/tips-for-creating-custom-dictionaries.md)
+* [Add a new identity to MIL-STD-2525C](/docs/add-a-new-identity-to-MIL-STD-2525C.md)
+* [Add a new symbol set to MIL-STD-2525D](/docs/add-a-new-symbol-set-to-MIL-STD-2525D.md)
+* [Add a configuration for country indicator for MIL-STD-2525C](/docs/add-a-configuration-for-country-indicator-for-MIL-STD-2525C.md)
 
 ## Requirements
 
