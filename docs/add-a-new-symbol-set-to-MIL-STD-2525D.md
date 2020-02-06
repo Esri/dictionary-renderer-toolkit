@@ -9,7 +9,7 @@ The new symbol set will have a value of `32`.
 ## Create a custom dictionary
 
 To modify the dictionary for MIL-STD-2525D you must first create a custom dictionary.
-1. Copy the mil2525d.stylx file from `…/Resources/Dictionaries/mil2525d` in the install location and paste it to the location the custom dictionary will be stored.
+1. Download the [Joint Military Symbology MIL-STD-2525D](https://www.arcgis.com/home/item.html?id=46294aa60b0b47feaca642450127ae12) file from ArcGIS Online.
 2. Open the copy of the mil2525d.stylx in an SQLite database editor.
 3. In the `meta` table, update the `dictionary_name` to the name of the custom dictionary.
 4. Make the style file editable by changing the `readonly` value to `false`.
@@ -49,8 +49,8 @@ _Update script for new frame:_ To add a new frame, a new symbol set must be adde
 ```
 // validity of critical attributes
 
-var _invalid_symbolset = indexof(['00', '01', '02', '05', '06', '10', '11', '15', '20', '25', '30', '32', '35', '36', '40', '45', '46', '47', '50', '51', '52', '53', '54', '60'], $symbolset) == -1;
-var _invalid_identity = indexof(['0', '1', '2', '3', '4', '5', '6'], $identity) == -1;
+var _invalid_symbolset = indexof(['00', '01', '02', '05', '06', '10', '11', '15', '20', '25', '30', '32', '35', '36', '40', '45', '46', '47', '50', '51', '52', '53', '54', '60'], _symbolset) == -1;
+var _invalid_identity = indexof(['0', '1', '2', '3', '4', '5', '6'], _identity) == -1;
 
 ```
 
@@ -64,7 +64,7 @@ else {
  keys = '';
 
  // map symbolset for frame icons
- var _symbolset_frame = decode($symbolset, '01', '01', '02', '01', '05', '05', '06', '05', '10', '10', '11', '10', '15', '30', '20', '20', '30', '30', '32', '32', '35', '35', '36', '35', '40', '40', '50', '05', '51', '01', '52', '30', '53', '30', '54', '35', '60', '30', '00');
+ var _symbolset_frame = decode(_symbolset, '01', '01', '02', '01', '05', '05', '06', '05', '10', '10', '11', '10', '15', '30', '20', '20', '30', '30', '32', '32', '35', '35', '36', '35', '40', '40', '50', '05', '51', '01', '52', '30', '53', '30', '54', '35', '60', '30', '00');
 
  ```
 

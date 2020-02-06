@@ -11,7 +11,7 @@ To add these new identities the dictionary script must be updated to recognize t
 
 ## Create a custom dictionary
 In order to modify the dictionary for MIL-STD-2525C it is necessary to create a custom dictionary.
-1. Copy the mil2525c.stylx file from `…/Resources/Dictionaries/Mil2525c` in the install location and paste into the location the custom dictionary will be stored.
+1. Download the [Joint Military Symbology MIL-STD-2525C](https://www.arcgis.com/home/item.html?id=96fd0d8bb7214755a45818e57ce74988) style from ArcGIS Online.
 2. Open the copy of the mil2525c.stylx in an SQLite database editor.
 3. In the meta table, update the `dictionary_name` to the name of the custom dictionary.
 4. Make the style file to editable by changing the `readonly` value to `false`.
@@ -61,14 +61,14 @@ if (_affiliation == 'Y')
 
   var _fill_color;
   if (_is_civilian)
-    _fill_color = decode($colors, 'DARK', '#500050', 'MEDIUM', '#800080', '#FFA1FF'); // civilian
+    _fill_color = decode($config.colors, 'DARK', '#500050', 'MEDIUM', '#800080', '#FFA1FF'); // civilian
   else
     _fill_color = decode(_color_affiliation,
-        'F', decode($colors, 'DARK', '#006B8C', 'MEDIUM', '#00A8DC', '#80E0FF'), // friendly
-        'N', decode($colors, 'DARK', '#00A000', 'MEDIUM', '#00E200', '#AAFFAA'), // neutral
-        'H', decode($colors, 'DARK', '#C80000', 'MEDIUM', '#FF3031', '#FF8080'), // hostile
- 'X', decode($colors, 'DARK', '# 9F4B6B', 'MEDIUM', '#BC587E', '#E37DA4'), // paramilitary
-        decode($colors, 'DARK', '#E1DC00', 'MEDIUM', '#FFFF00', '#FFFF80')); // unknown
+        'F', decode($config.colors, 'DARK', '#006B8C', 'MEDIUM', '#00A8DC', '#80E0FF'), // friendly
+        'N', decode($config.colors, 'DARK', '#00A000', 'MEDIUM', '#00E200', '#AAFFAA'), // neutral
+        'H', decode($config.colors, 'DARK', '#C80000', 'MEDIUM', '#FF3031', '#FF8080'), // hostile
+ 'X', decode($config.colors, 'DARK', '#9F4B6B', 'MEDIUM', '#BC587E', '#E37DA4'), // paramilitary
+        decode($config.colors, 'DARK', '#E1DC00', 'MEDIUM', '#FFFF00', '#FFFF80')); // unknown
 
 ```
 

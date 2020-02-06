@@ -1,17 +1,21 @@
-var $sidc = 'SAA------------';
-var $affiliation = 'F';
-var $extendedfunctioncode = '----------';
-var $status = 'P';
-var $hqtffd = '-';
-var $echelonmobility = '--';
-var $civilian = '1';
-var $direction = '45';
-
-var $colors = 'LIGHT';
-var $frame = 'ON';
-var $fill = 'ON';
-var $icon = 'ON';
-var $modifiers = 'ON';
-var $amplifiers = 'ON';
-var $text = 'ON';
-var $condition = 'ALTERNATE';
+var $feature={
+sidc: "SAA------------",
+legacy_standard: "mil2525c",
+affiliation: "F",
+extendedfunctioncode: "----------",
+status: "P",
+hqtffd: "-",
+echelonmobility: "--",
+civilian: "1",
+direction: "45",
+}
+var $config={
+colors: "LIGHT",
+frame: "ON",
+fill: "ON",
+icon: "ON",
+modifiers: "ON",
+amplifiers: "ON",
+text: "ON",
+condition: "ALTERNATE",
+}

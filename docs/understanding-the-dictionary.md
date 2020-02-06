@@ -21,7 +21,7 @@ For example, the MIL-STD-2525D dictionary style, which is included in ArcGIS Pro
 The dictionary script defines the keys for the individual component symbols. These keys may be a combination of variables, attributes, string, etc. In the example above, the frame key, which returns the blue rectangle, is built by combining the values for context, identity, symbol set and status.
 
 Frame key example code:
-`concatenate([_context, '_', $identity, _symbolset, '_', _status])`
+`concatenate([_context, '_', $feature.identity, _symbolset, '_', _status])`
 
 
 Mobile style files that are used as dictionaries must contain the following fields in the `meta` table of the .stylx file:
@@ -40,14 +40,15 @@ This is the name that shows in the Dictionary symbology pane in ArcGIS Pro.
 
 **_dictionary_version_**
 
-This is the version of the dictionary. The minimum version number for a custom dictionary is `2.0.0`.
+This is the version of the dictionary. The minimum version number for a custom dictionary is `2.0.0`.  This documentation covers version 3.0.0. For documentation of version 2.0.0, see the archived [branch](https://github.com/Esri/dictionary-renderer-toolkit/tree/release/2.0.0) of this repository. For details on how to upgrade a dictionary, see [Upgrading dictionary styles from a previous version
+](docs\upgrading-dictionary-styles-from-a-previous-version.md). Version `3.0.0` or higher is required to share the dictionary as a web style.
 
 **_arcade_version_**
 
 The Arcade version indicates the minimum version of Arcade needed to consume the script. The minimum Arcade version for a custom dictionary is `1.5.0`.
 
 ## Dictionary configuration
-This JSON object defines attributes that appear in the user interface to allow connection to database attributes. These attributes become available as variables in the script, prefixed by the `$` character.
+This JSON object defines attributes that appear in the user interface to allow connection to database attributes. These attributes become available as attributes in the `$config` global variable.  
 
 ### Configuration
 This section lists options that are not feature-dependent. Only text values are supported.
@@ -65,10 +66,10 @@ declaration
 
 Usage in the script:
 
-`var _show_icon = $icon != 'OFF';`
+`var _show_icon = $config.icon != 'OFF';`
 
 ### Symbol
-The symbol attributes are used to control how to build symbol keys. The symbol attributes are just an array of strings. The order in the array defines the order in the user interface. They are used in the script with the `$` character prefix.
+The symbol attributes are used to control how to build symbol keys. The symbol attributes are just an array of strings. The order in the array defines the order in the user interface. Their values are available as attributes in the `$feature` global variable.
 
 ### Text
 The text attributes are only used by the dictionary labels. They are not available as variables in the script.
@@ -90,13 +91,13 @@ The dictionary script is an Arcade script that returns a string. The string chai
 You can use any Arcade function to produce the string you want. A key is used to retrieve a symbol from the style.
 
 Examples:
-This example uses the content of feature attributes (attributes prefixed with `$`) directly:
+This example uses the content of feature attributes directly:
 
-`var key = concatenate([$symbolset, $symbolentity]);`
+`var key = concatenate([$feature.symbolset, $feature.symbolentity]);`
 
 This example uses a mix of intermediate variables, feature attributes, and constant strings:
 
-`var key = concatenate([_context, '_', $identity, _symbolset_frame, _status]);`
+`var key = concatenate([_context, '_', $feature.identity, _symbolset_frame, _status]);`
 
 ### Returning multiple keys
 Multiple keys are returned as a semi-colon separated string;
@@ -113,16 +114,17 @@ The script attempts to get the generic key, but if it is not found, it uses an a
 Example:
 ```
 keys += concatenate([
-     concatenate([$symbolset, $symbolentity]), // non touching frames
-     concatenate([$symbolset, $symbolentity, _affiliation_icon]) // touching frames - Both are provided because the existence of the icon cannot be queried.
+     concatenate([$feature.symbolset, $feature.symbolentity]), // non touching frames
+     concatenate([$feature.symbolset, $feature.symbolentity, _affiliation_icon]) // touching frames - Both are provided because the existence of the icon cannot be queried.
     ], '|'); // use | as the separator
 ```
 
 ### Using overrides
 The value returned by the script can also contain overrides. Overrides can be considered as a special key that starts with `po:` (for primitive override).
 
-A primitive override is a way to change a symbol property value differently per feature. Parts of a symbol can be tagged with a primitive name (like an element name in WPF or HTML).
-The syntax for a primitive override is `po:<primitive_name>|<property_name>|<value>` which means: for this symbol, replace <property_name> by <value> for all parts that are tagged <primitive_name>.
+A primitive override is a way to change a symbol property value differently per feature. Parts of a symbol can be tagged with a primitive name (like an element name in WPF or HTML).  The primitive name can be added to the symbol parts in ArcGIS Pro by clicking on the *show primitive name* button on the structure tab in the catalog view. 
+
+The syntax for a primitive override is `po:<primitive_name>|<property_name>|<value>` which means: for this symbol, replace `<property_name>` by `<value>` for all parts that are tagged `<primitive_name>`.  
 
 In the MIL-STD-2525 dictionaries, the frame symbols have built-in primitive names to identify parts that belong to the fill (`frame_fill`) or the outline (`frame_outline`). They can then be colored by overriding the `Color` property.
 

@@ -1,27 +1,31 @@
-var $sidc = '10121502512014000000';
+var $feature={
+sidc: "10121502512014000000",
 
-var $context = '0';
-var $identity = '3';
-var $symbolset = '10';
-var $status = '1';
-var $operationalcondition = '';
-var $symbolentity = '130100';
-var $modifier1 = '10';
-var $modifier2 = '10';
-var $specialentitysubtype = '';
-var $echelon = '3';
-var $mobility = '';
-var $array = '';
-var $indicator = '2';
-var $civilian = '1';
-var $direction = '45';
+context: "0",
+identity: "3",
+symbolset: "10",
+status: "1",
+operationalcondition: "",
+symbolentity: "130100",
+modifier1: "10",
+modifier2: "10",
+specialentitysubtype: "",
+echelon: "3",
+mobility: "",
+array: "",
+indicator: "2",
+civilian: "1",
+direction: "45",
+}
+var $config={
 
-var $colors = 'LIGHT';
-var $frame = 'ON';
-var $fill = 'ON';
-var $icon = 'ON';
-var $modifiers = 'ON';
-var $amplifiers = 'ON';
-var $text = 'ON';
-var $condition = 'ALTERNATE';
-var $sea_mine = 'MEDAL';
+colors: "LIGHT",
+frame: "ON",
+fill: "ON",
+icon: "ON",
+modifiers: "ON",
+amplifiers: "ON",
+text: "ON",
+condition: "ALTERNATE",
+sea_mine: "MEDAL",
+}

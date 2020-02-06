@@ -6,7 +6,7 @@ The example below illustrates how to add a country indicator with an option to d
 
 ## Create a custom dictionary
 In order to modify the dictionary for MIL-STD-2525C it is necessary to create a custom dictionary.
-1. Copy the `mil2525c.stylx` file from `…/Resources/Dictionaries/mil2525c` in the install location and paste it to the location the custom dictionary will be stored.
+1. Download the [Joint Military Symbology MIL-STD-2525C](https://www.arcgis.com/home/item.html?id=96fd0d8bb7214755a45818e57ce74988) style from ArcGIS Online.
 2. Open the copy of mil2525c.stylx in an SQLite database editor.
 3. Update the `dictionary_name` to the name of the custom dictionary.
 4. Make the style file editable by changing the `readonly` value to `false`.
@@ -92,20 +92,20 @@ var _country_code = '--';
 2. _Identify which character should be extracted for the two-digit country code in the full SIDC value:_ In the section immediately under the list of variables there is logic for how the 15-character SIDC code is decomposed. The country code is the 13th and 14th digits in the 15-character code. To extract this code, the mid function is used specifying the starting position and how many digits.
 
 ```
-var _sidc_len = count($sidc);
+var _sidc_len = count($feature.sidc);
 if (_sidc_len == 15) {
 
  // decompose sidc into individual fields
 
- _coding_scheme = mid($sidc, 0, 1);
- _affiliation = mid($sidc, 1, 1);
- _battle_dimension = mid($sidc, 2, 1);
- _status = mid($sidc, 3, 1);
- _function_code = mid($sidc, 4, 6);
- _HQ_TF_FD = mid($sidc, 10, 1);
- _echelon_mobility = mid($sidc, 11, 1);
- _order_of_battle = mid($sidc, 14, 1);
- _country_code = mid($sidc, 12, 2);
+ _coding_scheme = mid($feature.sidc, 0, 1);
+ _affiliation = mid($feature.sidc, 1, 1);
+ _battle_dimension = mid($feature.sidc, 2, 1);
+ _status = mid($feature.sidc, 3, 1);
+ _function_code = mid($feature.sidc, 4, 6);
+ _HQ_TF_FD = mid($feature.sidc, 10, 1);
+ _echelon_mobility = mid($feature.sidc, 11, 1);
+ _order_of_battle = mid($feature.sidc, 14, 1);
+ _country_code = mid($feature.sidc, 12, 2);
 } else if (_sidc_len == 0) {
 
 ```
@@ -117,23 +117,23 @@ if (_sidc_len == 15) {
 
  // read individual attributes if sidc not specified
 
- if (count($extendedfunctioncode) == 10) {
-  _coding_scheme = mid($extendedfunctioncode, 0, 1);
-  _affiliation = mid($extendedfunctioncode, 1, 1);
-  _battle_dimension = mid($extendedfunctioncode, 2, 1);
-  _status = mid($extendedfunctioncode, 3, 1);
-  _function_code = mid($extendedfunctioncode, 4, 6);
+ if (count($feature.extendedfunctioncode) == 10) {
+  _coding_scheme = mid($feature.extendedfunctioncode, 0, 1);
+  _affiliation = mid($feature.extendedfunctioncode, 1, 1);
+  _battle_dimension = mid($feature.extendedfunctioncode, 2, 1);
+  _status = mid($feature.extendedfunctioncode, 3, 1);
+  _function_code = mid($feature.extendedfunctioncode, 4, 6);
  }
  if (count($affiliation) == 1)
-  _affiliation = $affiliation;
- if (count($status) == 1)
-  _status = $status;
- if (count($hqtffd) == 1)
-  _HQ_TF_FD = $hqtffd;
- if (count($echelonmobility) == 1)
-  _echelon_mobility = $echelonmobility;
- if (count($countrycode) == 2)
-  _country_code = $countrycode;
+  _affiliation = $feature.affiliation;
+ if (count($feature.status) == 1)
+  _status = $feature.status;
+ if (count($feature.hqtffd) == 1)
+  _HQ_TF_FD = $feature.hqtffd;
+ if (count($feature.echelonmobility) == 1)
+  _echelon_mobility = $feature.echelonmobility;
+ if (count($feature.countrycode) == 2)
+  _country_code = $feature.countrycode;
 }
 ```
 
@@ -142,13 +142,13 @@ if (_sidc_len == 15) {
 ```
 // configuration options
 
-var _show_frame = $frame != 'OFF';
-var _show_icon = $icon != 'OFF';
-var _show_fill = $fill != 'OFF' && !_is_sea_mine;
-var _show_amplifiers = $amplifiers != 'OFF';
-var _show_text = $text != 'OFF';
-var _use_conditionalt = $condition != 'PRIMARY';
-var _use_flag = $country != 'ABBREVIATION';
+var _show_frame = $config.frame != 'OFF';
+var _show_icon = $config.icon != 'OFF';
+var _show_fill = $config.fill != 'OFF' && !_is_sea_mine;
+var _show_amplifiers = $config.amplifiers != 'OFF';
+var _show_text = $config.text != 'OFF';
+var _use_conditionalt = $config.condition != 'PRIMARY';
+var _use_flag = $config.country != 'ABBREVIATION';
 
 ```
 
@@ -178,7 +178,7 @@ Once the script has been updated it is good practice to verify the syntax of the
 1. Go to https://developers.arcgis.com/arcade/playground/
 2. Copy the text from [mil2525c_b2_app6b_arcade_vars.json](../variable_declarations/mil2525c_b2_app6b_arcade_vars.json) into the expression window. These are values that you can change to match the symbols you are adding. The values are used for the string that is returned in the results.
 3. _Add new country configuration option below other variables:_
-`var $country = 'ABBREVIATION';`
+`country: "ABBREVIATION",`
 4. Copy the text from the edited dictionary script. Paste below the text from `mil2525c_b2_app6b_arcade_vars`.
 5. Click Test. If there is a syntax error, the line with the error is reported in the results. If there are no errors the results show a string of the values returned. You can change the values at the top to test what different keys are returned.
 
