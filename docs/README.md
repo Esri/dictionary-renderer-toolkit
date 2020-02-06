@@ -3,3 +3,5 @@
 * [Add a new identity to MIL-STD-2525C](add-a-new-identity-to-MIL-STD-2525C.md)
 * [Add a new symbol set to MIL-STD-2525D](add-a-new-symbol-set-to-MIL-STD-2525D.md)
 * [Add a configuration for country indicator for MIL-STD-2525C](add-a-configuration-for-country-indicator-for-MIL-STD-2525C.md)
+* [Working with overrides in dictionaries](working-with-overrides.md)
+* [Upgrading dictionary styles from a previous version](pgrading-dictionary-styles-from-a-previous-version.md)
