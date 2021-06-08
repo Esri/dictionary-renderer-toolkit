@@ -11,7 +11,11 @@ Extend ArcGIS Pro, the ArcGIS API for JavaScript, and the ArcGIS Runtime SDKs by
 
 ## Requirements
 
-Dictionaries generated using this toolkit can be used in ArcGIS Pro 2.5 or higher and ArcGIS Runtime SDKs 100.7 or higher and published as web styles for use with the ArcGIS API for JavaScript 4.13 or higher. Note: The ArcGIS API for JavaScript only supports dictionary symbology for point feature layers at this time.
+Dictionaries generated using this toolkit can be used in ArcGIS Pro 2.5 or higher and in ArcGIS Runtime SDKs 100.7 or higher.
+
+The dictionaries can be shared as web styles for use with ArcGIS Runtime SDKs 100.10 or higher, ArcGIS Pro 2.6 or higher, and ArcGIS API for JavaScript 4.13 or higher.
+
+_Note: The ArcGIS API for JavaScript version 4.16 and higher support point, line, and polygon symbols. The ArcGIS API for JavaScript versions 4.13 through 4.15 support point symbols only._
 
 A previous version of this toolkit allowed for creation of dictionary styles that worked with ArcGIS Pro 2.4 and ArcGIS Runtime SDKs 100.6. It is archived as a [branch](https://github.com/Esri/dictionary-renderer-toolkit/tree/release/2.0.0) of this repository and it's recommended that dictionaries be upgraded to version 3.0.0, which this toolkit documents from that previous 2.0.0 version. See [Upgrading dictionary styles from a previous version](docs/upgrading-dictionary-styles-from-a-previous-version.md) for steps to upgrade.
 
@@ -27,7 +31,7 @@ Esri welcomes contributions from anyone and everyone. For more information, see 
 Find a bug or want to request a new feature? Let us know by submitting an issue.
 
 ## Licensing
-Copyright 2020 Esri
+Copyright 2021 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
 
