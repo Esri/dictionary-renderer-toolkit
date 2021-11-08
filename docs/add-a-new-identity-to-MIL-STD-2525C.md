@@ -11,7 +11,7 @@ To add these new identities the dictionary script must be updated to recognize t
 
 ## Create a custom dictionary
 In order to modify the dictionary for MIL-STD-2525C it is necessary to create a custom dictionary.
-1. Download the [Joint Military Symbology MIL-STD-2525C](https://www.arcgis.com/home/item.html?id=96fd0d8bb7214755a45818e57ce74988) style from ArcGIS Online.
+1. Download the [Joint Military Symbology MIL-STD-2525C](https://www.arcgis.com/home/item.html?id=4e31ddc1f609432d98bd400f87f6b7bf) style from ArcGIS Online.
 2. Open the copy of the mil2525c.stylx in an SQLite database editor.
 3. In the meta table, update the `dictionary_name` to the name of the custom dictionary.
 4. Make the style file to editable by changing the `readonly` value to `false`.

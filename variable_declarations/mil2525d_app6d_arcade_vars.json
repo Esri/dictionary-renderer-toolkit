@@ -28,4 +28,5 @@ amplifiers: "ON",
 text: "ON",
 condition: "ALTERNATE",
 sea_mine: "MEDAL",
+model: "GEOMETRY",
 }

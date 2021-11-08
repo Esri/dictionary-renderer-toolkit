@@ -18,4 +18,5 @@ modifiers: "ON",
 amplifiers: "ON",
 text: "ON",
 condition: "ALTERNATE",
+model: "GEOMETRY",
 }
