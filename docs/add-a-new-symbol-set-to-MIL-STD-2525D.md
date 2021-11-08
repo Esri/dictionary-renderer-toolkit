@@ -9,7 +9,7 @@ The new symbol set will have a value of `32`.
 ## Create a custom dictionary
 
 To modify the dictionary for MIL-STD-2525D you must first create a custom dictionary.
-1. Download the [Joint Military Symbology MIL-STD-2525D](https://www.arcgis.com/home/item.html?id=46294aa60b0b47feaca642450127ae12) file from ArcGIS Online.
+1. Download the [Joint Military Symbology MIL-STD-2525D](https://www.arcgis.com/home/item.html?id=44b781991d194dd8bc423e642c1932c5) file from ArcGIS Online.
 2. Open the copy of the mil2525d.stylx in an SQLite database editor.
 3. In the `meta` table, update the `dictionary_name` to the name of the custom dictionary.
 4. Make the style file editable by changing the `readonly` value to `false`.

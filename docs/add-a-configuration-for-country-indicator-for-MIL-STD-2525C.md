@@ -6,7 +6,7 @@ The example below illustrates how to add a country indicator with an option to d
 
 ## Create a custom dictionary
 In order to modify the dictionary for MIL-STD-2525C it is necessary to create a custom dictionary.
-1. Download the [Joint Military Symbology MIL-STD-2525C](https://www.arcgis.com/home/item.html?id=96fd0d8bb7214755a45818e57ce74988) style from ArcGIS Online.
+1. Download the [Joint Military Symbology MIL-STD-2525C](https://www.arcgis.com/home/item.html?id=4e31ddc1f609432d98bd400f87f6b7bf) style from ArcGIS Online.
 2. Open the copy of mil2525c.stylx in an SQLite database editor.
 3. Update the `dictionary_name` to the name of the custom dictionary.
 4. Make the style file editable by changing the `readonly` value to `false`.
@@ -148,6 +148,7 @@ var _show_fill = $config.fill != 'OFF' && !_is_sea_mine;
 var _show_amplifiers = $config.amplifiers != 'OFF';
 var _show_text = $config.text != 'OFF';
 var _use_conditionalt = $config.condition != 'PRIMARY';
+var _use_cp = $config.model == 'ORDERED ANCHOR POINTS';
 var _use_flag = $config.country != 'ABBREVIATION';
 
 ```
