@@ -10,7 +10,7 @@ The syntax for a primitive override is `po:<primitive_name>|<property_name>|<val
 
 In order to apply an override to a symbol part, the part needs to have a primitive name assigned.  The primitive name can be set by editing the symbol in the catalog view in ArcGIS Pro.  Primitive names can only be set on dictionary styles.
 
-1.	Add your custom dictionary style to ArcGIS Pro:  In ArcGIS Pro, on the Insert tab, in the Styles group, click Add and click Add Style. Browse to the custom dictionary style.
+1.	Add your custom dictionary style to ArcGIS Pro:  In ArcGIS Pro, on the Insert tab, in the Styles group, click Add and click Add Style. Browse to the custom dictionary style.  If you are using ArcGIS Pro 3.0 or higher, select yes when asked if you want to upgrade the style.
 
 2.	Open the custom dictionary style: On the View tab, in the Windows group, click Catalog View to open a Catalog view. In the Contents pane of the Catalog view, expand the Styles folder and click the custom dictionary to open it.
 

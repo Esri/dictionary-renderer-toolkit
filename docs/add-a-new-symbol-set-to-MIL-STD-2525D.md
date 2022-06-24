@@ -17,7 +17,7 @@ To modify the dictionary for MIL-STD-2525D you must first create a custom dictio
 ## Add a new frame symbol to style
 
 The new symbol set will have a differenty shaped frame than the existing symbol set, so a new symbol must be added to the style.
-1. _Add the custom dictionary to ArcGIS Pro_. In ArcGIS Pro, on the Insert tab, in the Styles group, click Add and click Add Style.  Browse to the custom dictionary style.
+1. _Add the custom dictionary to ArcGIS Pro_. In ArcGIS Pro, on the Insert tab, in the Styles group, click Add and click Add Style. Browse to the custom dictionary style. If you are using ArcGIS Pro 3.0 or higher, select yes when asked if you want to upgrade the style.
 
 2. _Create a temporary style:_ Because the dictionary style is very large it is better to create and modify symbols in a temporary style and then merge the symbols back into the dictionary style once they are finalized. To create the temporary style, on the Insert tab, in the Styles group, click New and click New Mobile Style.
  <!--- (edie) I was really confused by an editing style. this sounds like it has something to do with feature editing. can we just call it a temp style? --->

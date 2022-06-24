@@ -118,6 +118,10 @@ keys += concatenate([
      concatenate([$feature.symbolset, $feature.symbolentity, _affiliation_icon]) // touching frames - Both are provided because the existence of the icon cannot be queried.
     ], '|'); // use | as the separator
 ```
+### Reserved characters in keys
+To avoid incorrectly parsing the dictionary script results the semi-colon (`;`) and pipe (`|`) character should not be used in the style item keys for symbols in the dictionaries. As seen in the examples above, these characters are used to build a string of keys. If the characters are included in the style item keys for the symbols in the dictionary style the dictionary script will not be able to correctly build the string of keys. 
+
+If you are planning on using the dictionary as a web style additional reserved characters (e.g. period, forward slash) should also not be use in style item keys for symbols as they may interfere with building proper URLs.
 
 ### Using overrides
 The value returned by the script can also contain overrides. Overrides can be considered as a special key that starts with `po:` (for primitive override).

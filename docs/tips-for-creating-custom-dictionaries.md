@@ -7,3 +7,5 @@
 * Because dictionary styles can be very large, it can be easier to create or edit symbols in a separate, smaller style and then merge them into the dictionary style once editing is complete. Ensure that the symbols have the correct key once they are merged into the dictionary. Use the [Merge Style add-in](../Add-Ins/Merge_Styles) with the Replace Keys option to merge the symbols into the dictionary style while preserving the keys.
 
 * When customizing an existing dictionary, such as the military symbology dictionaries, the easiest way to create a new symbol is to copy an existing symbol and modify the properties accordingly. This approach preserves common properties, ensuring consistency.
+
+* Reserved characters, such as semi-colon (`;`), pipe (`|`), and period (`.`), should not be used in the style item keys for symbols in the dictionary.  These types of special characters can cause problems when trying to parse the dictionary script as well as when trying to build proper URLs for a dictionary as a web style.
