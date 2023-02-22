@@ -19,4 +19,5 @@ amplifiers: "ON",
 text: "ON",
 condition: "ALTERNATE",
 model: "GEOMETRY",
+friendly_CM_color: "BLACK",
 }

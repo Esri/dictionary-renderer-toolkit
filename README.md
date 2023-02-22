@@ -3,10 +3,13 @@ Extend ArcGIS Pro, the ArcGIS API for JavaScript, and the ArcGIS Runtime SDKs by
 
 * [Understanding the dictionary](/docs/understanding-the-dictionary.md)
 * [Tips for creating custom dictionaries](/docs/tips-for-creating-custom-dictionaries.md)
+* [Troubleshooting drawing issues](/docs/troubleshooting_drawing_issues.md)
 * [Add a new identity to MIL-STD-2525C](/docs/add-a-new-identity-to-MIL-STD-2525C.md)
 * [Add a new symbol set to MIL-STD-2525D](/docs/add-a-new-symbol-set-to-MIL-STD-2525D.md)
 * [Add a configuration for country indicator for MIL-STD-2525C](/docs/add-a-configuration-for-country-indicator-for-MIL-STD-2525C.md)
+* [Assign color by team for MIL-STD-2525D](/docs/assign_color_by_team_for_MIL-STD-2525D.md)
 * [Working with overrides in dictionaries](/docs/working-with-overrides.md)
+* [Editing labels in military styles](/docs/editing-label-symbols-in-military-styles.md)
 * [Upgrading dictionary styles from a previous version](/docs/upgrading-dictionary-styles-from-a-previous-version.md)
 
 ## Requirements
@@ -31,7 +34,7 @@ Esri welcomes contributions from anyone and everyone. For more information, see 
 Find a bug or want to request a new feature? Let us know by submitting an issue.
 
 ## Licensing
-Copyright 2021 Esri
+Copyright 2023 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
 

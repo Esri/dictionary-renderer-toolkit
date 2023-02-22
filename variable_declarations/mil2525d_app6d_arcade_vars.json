@@ -29,4 +29,5 @@ text: "ON",
 condition: "ALTERNATE",
 sea_mine: "MEDAL",
 model: "GEOMETRY",
+friendly_CM_color: "BLACK",
 }

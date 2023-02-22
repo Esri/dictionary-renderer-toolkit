@@ -22,6 +22,11 @@ Primitive names can be added to any symbol layer or geometric effect that is on 
 
 2.	Add primitive name to the polygon fill.  In the Format Embedded Polygon Symbol editor go to the Structure tab (![symbol structure icon](images/symbolstructure.png)) and click on the Show Primitive Name button (![Show primitive name icon](images/editprimitivename.png)).  In the dialog add the name and click OK.
 
+## Where to add the primitive name in the symbol structure
+
+Primitive overrides can be applied to properties at different levels in the symbol structure.  They can be applied at the main level of the symbol layer or the symbol that is embedded in the symbol layer.  For example, if you have point symbol that is composed of a marker symbol layer, that marker symbol layer has an embedded polygon symbol.  The primitive overrides can be applied at the marker level or at the embedded polygon level.  
+
+Where you place the override depends on the property you are trying to override and how the overrides will be applied to individual symbols.  The primitive name should be placed at the level of the property you want to override.  Depending on what you are trying to achieve you may want to have the same override apply to multiple symbols, for example changing the color of a symbol.  Alternatively, you may want to have a specific override applied to individual symbols, for example a specific offset depending on the type of symbol.  If you want to combine these goals, it is necessary to have overrides at both the main symbol layer level and the embedded symbol layer level.  The example below will illustrate this.
 
 ## Example of offset overrides
 
@@ -95,6 +100,11 @@ if ($feature.Restroom == 'Yes') {
 }
 ...
 ```
+The resulting key string for offsetting the icons for Ross Park would be:
+`Parking;Playground;po:playground_marker|OffsetX|15;Picnic;po:picnic_marker|OffsetX|30;Barbeque;po:barbeque_marker|OffsetX|45;Baseball;po:baseball_marker|OffsetY|-15;Basketball;po:basketball_marker|OffsetX|15;po:basketball_marker|OffsetY|-15;Soccer;po:soccer_marker|OffsetX|30;po:soccer_marker|OffsetY|-15`
+
+The primitive names used for the offsets, such as playground_marker, are unique to a single symbol so the offset can be applied to the individual amenities to create the grid.
+
 
 ## Example of color overrides
 In the Park Amenity dictionary, there is a configuration option to turn the green frames of the symbols off and draw only the icon.  This is accomplished by overriding the color depending on the setting of the ‘Show Frame’ configuration option.  
@@ -121,6 +131,11 @@ if (!_show_frame) {
     keys += '#89CD66';
 }
 ```
+The resulting key string for coloring the icons with the frame off for Ross Park would be:
+`Parking;Playground;po:playground_marker|OffsetX|11;Picnic;po:picnic_marker|OffsetX|22;Barbeque;po:barbeque_marker|OffsetX|33;Baseball;po:baseball_marker|OffsetY|-11;Basketball;po:basketball_marker|OffsetX|11;po:basketball_marker|OffsetY|-11;Soccer;po:soccer_marker|OffsetX|22;po:soccer_marker|OffsetY|-11;Label;po:frame|Color|#89CD6600;po:icon|Color|#89CD66`
+
+While the primitive names for the offsets are unique for each symbol allowing the offsets to be applied for the individual amenities, the primitive names for the frame and icon are the same for all the symbols.  This allows for the color to be globally overridden for all symbols.
+
 
 Another example of a color override is in the [Service Call](../dictionary_examples/Service_Calls) dictionary where the color of the symbol is driven by the value in an attribute field.  In this dictionary, services are symbolized base on the type of call and the status of the call.  The type of call dictates the icon in the center of the hexagon while status controls the color of the outline on the hexagon.
 
@@ -149,3 +164,14 @@ if (_repair)
 keys += ';NUMBER';
 return keys;
 ```
+
+
+**Tip:**
+
+There is a special case where there is an extension to the CIM for how color overrides are applied to marker graphics.  In this case property name does not match a CIM property name.  If you use a color override at the marker graphic level, you will need to use `FillColor` for the fill color and `StrokeColor` for the outline color.  This only applies if you place the primitive name at the marker graphic level, which is highlighted in the red in the image below.  For all other cases, the property name will be `Color` as shown in the examples above.
+
+*Primitive name on marker graphic location*
+
+![marker graphic primitive name](images/markergraphicprimitivename.PNG)
+
+

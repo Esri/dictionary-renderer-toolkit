@@ -81,3 +81,4 @@ Once the script has been updated it is good practice to verify the syntax of the
 3. Copy the text from the edited dictionary script. Paste below the text from `mil2525c_b2_app6b_arcade_vars`.
 4. Click Test. If there is a syntax error, the line with the error is reported in the results. If there are no errors the results show a string of the values returned.
 Once the script has been verified, you can add it into the .stylx `meta` table.
+5. To add the script back into the dictionary, copy and paste the script into `dictionary_script` in the `meta` table of the .stylx.

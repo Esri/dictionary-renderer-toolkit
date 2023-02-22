@@ -20,7 +20,7 @@ New symbols for the country indicator must be added to the dictionary style. Eac
 
 3. _Create new flag point symbol:_ The flag symbol can be created by importing an SVG file of the flag into a marker symbol layer in a point symbol.
 
-  a. _Add a new point symbol:_ With the temporary style active, under Manage, on the Styles tab, in  Create group, click open the New Item menu and click Point Symbol. A new point symbol is added to the style.
+  a. _Add a new point symbol:_ With the temporary style active, click the Manage tab on the ribbon, in  Create group, click open the New Item menu and click Point Symbol. A new point symbol is added to the style.
 
   b. _Edit the metadata:_ Click the new point symbol to highlight it. In the Details panel, on the Description tab, update the name of the symbol and set the appropriate category and tags. (If necessary, on the View tab, in the Options group, check Show Details Panel.) Set the key to contain country, the abbreviation for the country, and flag. For example, `country_US_flag`. The convention for the key is used in the script. Click Apply to save your changes.
 
@@ -30,7 +30,7 @@ New symbols for the country indicator must be added to the dictionary style. Eac
 
 4. _Author text symbol for label:_ The abbreviation symbol will be a point symbol with a marker element containing text. The symbol for that text must be first authored as a text symbol that is then applied to the marker.
 
-  a. _Create a text symbol:_ Because this symbol does not need to be merged into the dictionary style it can be created in your Favorites style (or in another custom style.) Open your Favorites style. Under Manage on the Styles tab, in the Create group, click the New Item menu and click Text Symbol. Click the new text symbol to highlight it.
+  a. _Create a text symbol:_ Because this symbol does not need to be merged into the dictionary style it can be created in your Favorites style (or in another custom style.) Open your Favorites style. Click the Manage tab on the ribbon, in the Create group, click the New Item menu and click Text Symbol. Click the new text symbol to highlight it.
 
   b. _Update the metadata of the point symbol:_ On the Description tab, change the name of the symbol to something descriptive. Because this symbol will not be directly consumed by the dictionary there is no need to set a specific key.
 
@@ -53,7 +53,7 @@ New symbols for the country indicator must be added to the dictionary style. Eac
 
 ## Update configuration file
 
-The dictionary configuration file controls the symbology and text fields that are shown in the Dictionary Symbology pane. This file also controls the options that are shown in the configuration section of the Symbology pane. To connect the country indicator to an attribute field in the data, a new symbology field must be added. To toggle between the flag or the two-letter abbreviation, a new option must be added to the configuration section. To modify the dictionary configuration, copy it from the meta table in the .stylx file and paste the dictionary configuration file in Notepad ++. See [Tips for creating custom dictionaries](tips-for-creating-custom-dictionaries.md).
+The dictionary configuration file controls the symbology and text fields that are shown in the Dictionary Symbology pane. This file also controls the options that are shown in the configuration section of the Symbology pane. To connect the country indicator to an attribute field in the data, a new symbology field must be added. To toggle between the flag or the two-letter abbreviation, a new option must be added to the configuration section. To modify the dictionary configuration, copy it from the meta table in the .stylx file and paste the dictionary configuration file in Notepad++. See [Tips for creating custom dictionaries](tips-for-creating-custom-dictionaries.md).
 
 1. _Add an option to the configuration section:_ The configuration section of the Dictionary Symbology pane has multiple options for how all the symbols are displayed. For example, you can set the color for framed symbols to be the light, medium, or dark version of the symbols. For the country indicator, add an option called `country` that allows the user to choose to show the abbreviation or the flag. The name is what the control is called in the pane. The value sets the default option and domain are the choices shown in the drop down.
 
@@ -67,7 +67,7 @@ The dictionary configuration file controls the symbology and text fields that ar
 
   ```
 
-2. Add new symbol field. In the configuration file add `countrycode` to the list of symbol fields. This adds `countrycode` in the Symbology Fields section of the Dictionary Symbology pane.
+2. _Add new symbol field:_ In the configuration file add `countrycode` to the list of symbol fields. This adds `countrycode` in the Symbology Fields section of the Dictionary Symbology pane.
 
   `"symbol": ["sidc", "affiliation", "extendedfunctioncode", "status", "hqtffd", "echelonmobility", "civilian", "direction", "countrycode"],`
 

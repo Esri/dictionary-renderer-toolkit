@@ -22,11 +22,11 @@ The new symbol set will have a differenty shaped frame than the existing symbol 
 2. _Create a temporary style:_ Because the dictionary style is very large it is better to create and modify symbols in a temporary style and then merge the symbols back into the dictionary style once they are finalized. To create the temporary style, on the Insert tab, in the Styles group, click New and click New Mobile Style.
  <!--- (edie) I was really confused by an editing style. this sounds like it has something to do with feature editing. can we just call it a temp style? --->
 
-3. _Open the custom dictionary style:_ On the View tab, in the Windows group, click Catalog View to open a Catalog view. In the Contents pane of the Catalog view, expand the Styles folder and click the custom dictionary to open it.
+3. _Open the custom dictionary style:_ On the View tab, in the Windows group, click Catalog View to open a Catalog view. In the Contents pane of the Catalog view, expand the Styles folder and click the custom dictionary to select it.
 
 4. _Copy a point symbol:_ It is easier to copy an existing frame symbol and modify it than to construct a new one because you can retain common properties such as size, anchor points, and meta data as applicable.
 
- a. _Locate the symbol to copy in the dictionary:_ In the Contents pane, click the Dictionary style to highlight it. In the Search box, enter `Frame`, to find all the Frame symbols. Select the frame symbol to copy. You can select multiple symbols to copy.
+ a. _Locate the symbol to copy in the dictionary:_ In the Catalog View, double click the Dictionary style to open it. In the Search box, enter `Frame`, to find all the Frame symbols. Select the frame symbol to copy. You can select multiple symbols to copy.
 
  b. _Copy symbol in the temporary style:_ Right-click the frame symbol and click Copy. In the Contents pane, right-click the temporary style and click Paste. Click OK in the dialog box indicating that the symbol will be downgraded when pasted into the mobile style.
 
