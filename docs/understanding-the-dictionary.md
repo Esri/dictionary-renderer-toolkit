@@ -40,7 +40,7 @@ This is the name that shows in the Dictionary symbology pane in ArcGIS Pro.
 
 **_dictionary_version_**
 
-This is the version of the dictionary. The minimum version number for a custom dictionary is `2.0.0`.  This documentation covers version 3.0.0. For documentation of version 2.0.0, see the archived [branch](https://github.com/Esri/dictionary-renderer-toolkit/tree/release/2.0.0) of this repository. For details on how to upgrade a dictionary, see [Upgrading dictionary styles from a previous version
+This is the version of the dictionary. The minimum version number for a custom dictionary is `2.0.0`.  This documentation covers version 4.0.0. For information on versions and details on how to upgrade a dictionary, see [Upgrading dictionary styles from a previous version
 ](docs\upgrading-dictionary-styles-from-a-previous-version.md). Version `3.0.0` or higher is required to share the dictionary as a web style.
 
 **_arcade_version_**

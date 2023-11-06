@@ -6,6 +6,11 @@ A primitive override is a way to change a symbol property value differently per 
 
 The syntax for a primitive override is `po:<primitive_name>|<property_name>|<value>` which means: for this symbol, replace `<property_name>` by `<value>` for all parts that are tagged `<primitive_name>`.  The property name needs to match the CIM property name.  Names can be found in the [CIMSymbols specification](https://github.com/Esri/cim-spec/blob/master/docs/v2/CIMSymbols.md).  The first letter of the property will need to be capitalized.
 
+The primitive name will apply to all the symbols identified with the keys. Symbols that share the same primitive name will have the same override applied.  An example of this can be seen in the [color override example](https://devtopia.esri.com/ArcGISPro/dictionary-renderer-toolkit/blob/main/docs/working-with-overrides.md#example-of-color-overrides) below.  
+
+It is important to note that one primitive name equals one overridden value. Different override values cannot be applied to the same primitive name. To apply different values it is neccessary to have different primitive names. This is illustrated by the [offset override example](https://devtopia.esri.com/ArcGISPro/dictionary-renderer-toolkit/blob/main/docs/working-with-overrides.md#example-of-offset-overrides) below.
+
+
 ## Adding primitive names to symbols in the dictionary
 
 In order to apply an override to a symbol part, the part needs to have a primitive name assigned.  The primitive name can be set by editing the symbol in the catalog view in ArcGIS Pro.  Primitive names can only be set on dictionary styles.
@@ -90,11 +95,11 @@ When building the grid of symbols that represent the park amenities, the functio
 
 ```
 // Park amenities
-if ($feature.Parking == 'Yes') {
+if ($feature.PARKING == 'Yes') {
     keys += ';Parking';
     addOffsetOverrides('parking_marker');
 }
-if ($feature.Restroom == 'Yes') {
+if ($feature.RESTROOM == 'Yes') {
     keys += ';Restroom';
     addOffsetOverrides('restroom_marker');
 }
@@ -103,7 +108,7 @@ if ($feature.Restroom == 'Yes') {
 The resulting key string for offsetting the icons for Ross Park would be:
 `Parking;Playground;po:playground_marker|OffsetX|15;Picnic;po:picnic_marker|OffsetX|30;Barbeque;po:barbeque_marker|OffsetX|45;Baseball;po:baseball_marker|OffsetY|-15;Basketball;po:basketball_marker|OffsetX|15;po:basketball_marker|OffsetY|-15;Soccer;po:soccer_marker|OffsetX|30;po:soccer_marker|OffsetY|-15`
 
-The primitive names used for the offsets, such as playground_marker, are unique to a single symbol so the offset can be applied to the individual amenities to create the grid.
+The primitive names used for the offsets, such as playground_marker, are unique to a single symbol so the offset can be applied to the individual amenities to create the grid. You cannot have multiple offset values applied using the same primitive name.
 
 
 ## Example of color overrides
@@ -137,7 +142,7 @@ The resulting key string for coloring the icons with the frame off for Ross Park
 While the primitive names for the offsets are unique for each symbol allowing the offsets to be applied for the individual amenities, the primitive names for the frame and icon are the same for all the symbols.  This allows for the color to be globally overridden for all symbols.
 
 
-Another example of a color override is in the [Service Call](../dictionary_examples/Service_Calls) dictionary where the color of the symbol is driven by the value in an attribute field.  In this dictionary, services are symbolized base on the type of call and the status of the call.  The type of call dictates the icon in the center of the hexagon while status controls the color of the outline on the hexagon.
+Another example of a color override is in the [Service Calls](../dictionary_examples/Service_Calls) dictionary where the color of the symbol is driven by the value in an attribute field.  In this dictionary, services are symbolized base on the type of call and the status of the call.  The type of call dictates the icon in the center of the hexagon while status controls the color of the outline on the hexagon.
 
 *Service Calls*
 

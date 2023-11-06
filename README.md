@@ -3,6 +3,7 @@ Extend ArcGIS Pro, the ArcGIS API for JavaScript, and the ArcGIS Runtime SDKs by
 
 * [Understanding the dictionary](/docs/understanding-the-dictionary.md)
 * [Tips for creating custom dictionaries](/docs/tips-for-creating-custom-dictionaries.md)
+* [Working with different field types](/docs/working-with-different-field-types.md)
 * [Troubleshooting drawing issues](/docs/troubleshooting_drawing_issues.md)
 * [Add a new identity to MIL-STD-2525C](/docs/add-a-new-identity-to-MIL-STD-2525C.md)
 * [Add a new symbol set to MIL-STD-2525D](/docs/add-a-new-symbol-set-to-MIL-STD-2525D.md)
@@ -20,7 +21,21 @@ The dictionaries can be shared as web styles for use with ArcGIS Runtime SDKs 10
 
 _Note: The ArcGIS API for JavaScript version 4.16 and higher support point, line, and polygon symbols. The ArcGIS API for JavaScript versions 4.13 through 4.15 support point symbols only._
 
-A previous version of this toolkit allowed for creation of dictionary styles that worked with ArcGIS Pro 2.4 and ArcGIS Runtime SDKs 100.6. It is archived as a [branch](https://github.com/Esri/dictionary-renderer-toolkit/tree/release/2.0.0) of this repository and it's recommended that dictionaries be upgraded to version 3.0.0, which this toolkit documents from that previous 2.0.0 version. See [Upgrading dictionary styles from a previous version](docs/upgrading-dictionary-styles-from-a-previous-version.md) for steps to upgrade.
+Previous versions of this toolkit allowed for the creation of older version dictionaries. These are archived as branches of this repository. The table below shows the branches available and the versions of the dictionary, ArcGIS Pro and ArcGIS Runtime SDK that they correspond to. It is recommended that dictionaries be upgraded to version 4.0.0, to achieve the full functionality of the dictionary. See [Upgrading dictionary styles from a previous version](docs/upgrading-dictionary-styles-from-a-previous-version.md) for steps to upgrade.
+
+
+
+| Branch | Notes | ArcGIS Pro | ArcGIS Runtime SDK | ArcGIS Maps SDK for JavaScript | Dictionary Version |
+| -------| ----- | ---------- | ------------------ | ------------------------------ | ------------------ |
+|master |	Dictionary version 4.0.0 | Pro 3.2 or higher	| 200.2 or higher	| 4.27 or higher | 4.0.0 |
+|[release/3.0.0](https://github.com/Esri/dictionary-renderer-toolkit/tree/release/3.0.0) | Add-ins are for ArcGIS Pro 3x, dictionary version 3.0.0	| Pro 3.0 or higher	| 100.7 or higher | 4.13 or higher |	3.0.0 |
+|[release/2.9.0](https://github.com/Esri/dictionary-renderer-toolkit/tree/release/2.9.0) |	Add-ins are for ArcGIS Pro 2x |	Pro 2.5 - Pro 2.9 |	100.7 or higher	| 4.13 or higher | 3.0.0 |
+|[release/2.0.0](https://github.com/Esri/dictionary-renderer-toolkit/tree/release/2.0.0) |	Dictionary version 2.0.0 |Pro 2.4 |	100.6	| NA | 2.0.0 |
+
+
+
+
+
 
 See the [ArcGIS Pro system requirements](https://pro.arcgis.com/en/pro-app/get-started/arcgis-pro-system-requirements.htm) for requirements to run ArcGIS Pro.
 

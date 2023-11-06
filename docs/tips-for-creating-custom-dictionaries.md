@@ -13,3 +13,5 @@
 * When using invalid symbols in the dictionary to symbolize features whose attributes do not produce an existing key in the style, it is necessary to hard code specific keys for the invalid symbols. For point symbols the key needs to be `Invalid_P`. For line symbols the key needs to be `Invalid_L`. For polygon symbols the key needs to be `Invalid_A`.
 
 * Names used for symbol attributes, text attributes and configuration fields should be unique.  The name should not be duplicated even if they are in different groups.
+
+* When using Arcade operators that require numeric, date or time data types ensure the dictionary version is 4.0.0.  See [Working with different field types](../docs/working-with-different-field-types.md) for examples.

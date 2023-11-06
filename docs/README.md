@@ -1,5 +1,6 @@
 * [Understanding the dictionary](understanding-the-dictionary.md)
 * [Tips for creating custom dictionaries](tips-for-creating-custom-dictionaries.md)
+* [Working with different field types](working-with-different-field-types.md)
 * [Troubleshooting drawing issues](troubleshooting_drawing_issues.md)
 * [Add a new identity to MIL-STD-2525C](add-a-new-identity-to-MIL-STD-2525C.md)
 * [Add a new symbol set to MIL-STD-2525D](add-a-new-symbol-set-to-MIL-STD-2525D.md)

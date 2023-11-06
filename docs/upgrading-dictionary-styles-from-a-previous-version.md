@@ -1,9 +1,37 @@
 # Upgrading dictionary styles from a previous version
 
 ## Versions
-This toolkit defines how to create a dictionary of version `3.0.0`. [A previous version of the toolkit](https://github.com/Esri/dictionary-renderer-toolkit/tree/release/2.0.0), documented version `2.0.0` and we recommend upgrading dictionary styles to the `3.0.0` specification for full compatibility with the web styles and the ArcGIS API for JavaScript.
+We recommend dictionaries versions of `3.0.0` or `4.0.0` for full compatibility with the web styles and the ArcGIS Maps SDK for JavaScript.  Both dictionary versions are fully compatible with those specification.  Version `4.0.0` has additional functionality for supporting native data types without converting the values to strings.  See [Working with different field types](docs/working-with-different-field-types.md) for additional details.
 
-## Upgrading the style
+Version `2.0.0` dictionaries cannot be shared as web styles and are not compatible with the ArcGIS Maps SDK for JavaScript.  It is highly recommended to upgrade these dictionaries.
+
+
+| Dictionary Version  | Version Notes | ArcGIS Pro | ArcGIS Runtime SDK | ArcGIS Maps SDK for JavaScript | Branch |
+| ------------------ | ----- | ---------- | ------------------ | ------------- |------------------ |
+|4.0.0 |	Support for native data types | Pro 3.2 or higher	| 200.2 or higher	| 4.27 or higher | master |
+|3.0.0 | Usage of $feature and $config to be more Arcade compliant	| Pro 3.0 or higher	| 100.7 or higher | 4.13 or higher |	[release/3.0.0](https://github.com/Esri/dictionary-renderer-toolkit/tree/release/3.0.0)|
+|2.0.0 |	Initial version |Pro 2.4 |	100.6	| NA | [release/2.0.0](https://github.com/Esri/dictionary-renderer-toolkit/tree/release/2.0.0)|
+
+## Upgrading 3.0.0 to 4.0.0
+Upgrading the dictionary to version `4.0.0` is optional but does offer more control over the functionality of the operators used in the script because the native data types are preserved.
+
+1. The first change is that the value of key `dictionary_version` in the `meta` table must be changed from `3.0.0` to `4.0.0`.
+
+2. Depending on the operators used in the script it may be necessary to make adjustments in the script.  Comparison operators, like == and !=, always consider different data types as not equal.  If these are used in the script they will need to be adjusted.  
+
+An example of this can be seen in the [Park Amenities](../dictionary_examples/Park_Amenities) dictionary.
+In the script, icons are shown for the different amenities by checking if the attribute value does not equal zero. The != operator is used for this comparison.  To upgrade to `4.0.0` it is necessary to remove the single quotes or the comparison will fail and symbols will unexpectedly draw.
+
+In `3.0.0` the script would be
+`if ($feature.TENNIS != '0')`    which is an explicit string comparison.
+  
+In `4.0.0` the script would be
+  `if ($feature.TENNIS != 0)`    which is a number comparison. 
+
+If you are working with a custom dictionary that is based on the Joint Military Symbology or NATO Joint Military Symbology specifications the best way to identify changes that are needed in the script is to compare your custom script to the `4.0.0` versions of the dictionaries available from ArcGIS Online. The `4.0.0` script is more robust for different database schemes; however, the logic of the military specifications requires the symbol ID codes to be considered as string.  Modifications were made to ensure the database is properly converted to what the script requires.
+
+
+## Upgrading 2.0.0 to 3.0.0
 
 Upgrading the dictionary requires two steps and are typically done with manual edits of the SQLite database:
 
