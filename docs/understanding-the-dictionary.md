@@ -85,7 +85,7 @@ All the parts of the expression using square brackets are candidates for this su
 There is a custom behavior with the `text` configuration attribute. If the value is `OFF`, attributes are always substituted by an empty string. The example above shows as `PL` in this case.
 
 ## Dictionary script
-The dictionary script is an Arcade script that returns a string. The string chains together different keys which should match symbols in the dictionary style. All the corresponding symbols are used to compose the final symbol representing the feature.
+The dictionary script is an Arcade script following the [Dictionary Renderer profile](https://developers.arcgis.com/arcade/profiles/dictionary-renderer/) that returns a string. The string chains together different keys which should match symbols in the dictionary style. All the corresponding symbols are used to compose the final symbol representing the feature.
 
 ### Creating keys
 You can use any Arcade function to produce the string you want. A key is used to retrieve a symbol from the style.
