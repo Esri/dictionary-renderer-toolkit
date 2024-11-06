@@ -10,6 +10,7 @@ The primitive name will apply to all the symbols identified with the keys. Symbo
 
 It is important to note that one primitive name equals one overridden value. Different override values cannot be applied to the same primitive name. To apply different values it is neccessary to have different primitive names. This is illustrated by the [offset override example](https://devtopia.esri.com/ArcGISPro/dictionary-renderer-toolkit/blob/main/docs/working-with-overrides.md#example-of-offset-overrides) below.
 
+The reserved string, `countrylabel`, should not be used as a primitive name.  This is reserved to handle a special symbol/text duality case in military dictionaries.
 
 ## Adding primitive names to symbols in the dictionary
 

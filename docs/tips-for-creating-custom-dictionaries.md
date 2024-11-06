@@ -8,9 +8,11 @@
 
 * When customizing an existing dictionary, such as the military symbology dictionaries, the easiest way to create a new symbol is to copy an existing symbol and modify the properties accordingly. This approach preserves common properties, ensuring consistency.
 
+* There are some reserved strings that should not be used.  The string `gt` should not be used as a symbol property because this is always added to $feature for the geometry type.  The string `countrylabel` should not be used as a primitive name because it is a special case that is reserved to handle a special symbol/text duality case in military dictionaries.
+
 * Reserved characters, such as semi-colon (`;`), pipe (`|`), and period (`.`), should not be used in the style item keys for symbols in the dictionary. These types of special characters can cause problems when trying to parse the dictionary script as well as when trying to build proper URLs for a dictionary as a web style.
 
-* When using invalid symbols in the dictionary to symbolize features whose attributes do not produce an existing key in the style, it is necessary to hard code specific keys for the invalid symbols. For point symbols the key needs to be `Invalid_P`. For line symbols the key needs to be `Invalid_L`. For polygon symbols the key needs to be `Invalid_A`.
+* When using invalid symbols in the dictionary to symbolize features whose attributes do not produce an existing key in the style, it is necessary to hard code specific keys for the invalid symbols. For point symbols the key needs to be `Invalid_P`. For line symbols the key needs to be `Invalid_L`. For polygon symbols the key needs to be `Invalid_A`. If these hard coded keys are not provided in the style, nothing will draw on the map for a symbol if the first value in the keys is invalid.
 
 * Names used for symbol attributes, text attributes and configuration fields should be unique.  The name should not be duplicated even if they are in different groups.
 
