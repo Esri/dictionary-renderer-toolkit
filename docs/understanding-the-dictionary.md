@@ -47,6 +47,10 @@ This is the version of the dictionary. The minimum version number for a custom d
 
 The Arcade version indicates the minimum version of Arcade needed to consume the script. The minimum Arcade version for a custom dictionary is `1.5.0`.
 
+**_revision_number_**
+
+This integer number represents the revision version.  It is updated when a change is made to the style, script or configuration to distinguish it from other versions of the style.
+
 ## Dictionary configuration
 This JSON object defines attributes that appear in the user interface to allow connection to database attributes. These attributes become available as attributes in the `$config` global variable.  
 

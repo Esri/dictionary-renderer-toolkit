@@ -4,9 +4,15 @@
 
 * When editing the Arcade script, you can check the syntax and ensure the expected keys are returned using https://developers.arcgis.com/arcade/playground/. In the Expression window, add variables for the properties in the configuration. Below the variables, copy the modified script and click Test. If there are no errors, the results return a string of the values. Variables for the dictionaries included in ArcGIS Pro are available [here](../variable_declarations)
 
+* A `revision_number` key and value can be added to the `meta` table in the .stylx in a SQLite database browser to track changes to the dictionary.  This is useful for tracking modifications that are made to the symbols, script or configuration.  This number should be incremented when a change is made.
+
+* When customizing an existing military symbology dictionary provided by Esri, it may be helpful to track customization versions by appending to the existing revision number.  For example, if the revision number is 101 the appended revision number could be 101_1.
+
 * Because dictionary styles can be very large, it can be easier to create or edit symbols in a separate, smaller style and then merge them into the dictionary style once editing is complete. Ensure that the symbols have the correct key once they are merged into the dictionary. Use the [Merge Style add-in](../Add-Ins/Merge_Styles) with the Replace Keys option to merge the symbols into the dictionary style while preserving the keys.
 
 * When customizing an existing dictionary, such as the military symbology dictionaries, the easiest way to create a new symbol is to copy an existing symbol and modify the properties accordingly. This approach preserves common properties, ensuring consistency.
+
+* When customizing an existing dictionary, such as the military symbology dictionaries, it is recommended to change the dictionary name in the `meta` table in the .stylx in a SQLite database browser.  This ensures the dictionary will have a unique name in the ArcGIS Pro UI.
 
 * There are some reserved strings that should not be used.  The string `gt` should not be used as a symbol property because this is always added to $feature for the geometry type.  The string `countrylabel` should not be used as a primitive name because it is a special case that is reserved to handle a special symbol/text duality case in military dictionaries.
 
